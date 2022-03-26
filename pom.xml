@@ -81,16 +81,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <dependency>
-      <groupId>net.masterthought</groupId>
-      <artifactId>maven-cucumber-reporting</artifactId>
-      <version>${mavencucumberreporting.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>extentreports-cucumber4-adapter</artifactId>
-      <version>${extentreportscucumberadapter.version}</version>
-    </dependency>
   </dependencies>
 
   <build>
@@ -114,30 +104,10 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${mavensurefireplugin.version}</version>
           <configuration>
-            <testFailureIgnore>true</testFailureIgnore>
             <suiteXmlFiles>
               <suiteXmlFile>testng.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>net.masterthought</groupId>
-          <artifactId>maven-cucumber-reporting</artifactId>
-          <version>5.0.0</version>
-          <executions>
-            <execution>
-              <id>execution</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-              <configuration>
-                <projectName>N11Web</projectName>
-                <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
-                <inputDirectory>target/cucumber-reports/cucumber.json</inputDirectory>
-              </configuration>
-            </execution>
-          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
