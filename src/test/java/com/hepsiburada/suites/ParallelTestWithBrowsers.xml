@@ -4,13 +4,13 @@
     <test name="FirefoxTest">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="com.hepsiburada.stepImplementation.HomeTest"/>
+            <class name="com.hepsiburada.test.AddProductTest"/>
         </classes>
     </test>
     <test name="ChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.hepsiburada.stepImplementation.HomeTest"/>
+            <class name="com.hepsiburada.test.AddProductTest"/>
         </classes>
     </test>
 </suite>

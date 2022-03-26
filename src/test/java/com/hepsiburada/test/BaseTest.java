@@ -1,4 +1,4 @@
-package com.hepsiburada.stepImplementation;
+package com.hepsiburada.test;
 
 import com.hepsiburada.manager.DriverFactory;
 import org.testng.annotations.AfterMethod;
