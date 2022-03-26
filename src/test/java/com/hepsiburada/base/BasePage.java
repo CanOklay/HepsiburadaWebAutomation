@@ -48,17 +48,6 @@ public abstract class BasePage extends BaseTest {
         return findElement(by).getText();
     }
 
-    public void clear(By by) {
-        findElement(by).clear();
-    }
-
-    public void clearBackSpace(By by) {
-        WebElement element = findElement(by);
-        while (!element.getAttribute("value").equals("")) {
-            element.sendKeys(Keys.BACK_SPACE);
-        }
-    }
-
     public void wait(int seconds) throws InterruptedException {
         TimeUnit.SECONDS.sleep(seconds);
     }
@@ -91,10 +80,6 @@ public abstract class BasePage extends BaseTest {
 
     public void assertFalse(boolean condition, String message) {
         Assert.assertFalse(condition, message);
-    }
-
-    public void assertEqualsInteger(String first, int second) {
-        Assert.assertEquals(first, second);
     }
 
     public void assertFail() {
