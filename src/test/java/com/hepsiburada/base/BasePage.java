@@ -1,15 +1,13 @@
 package com.hepsiburada.base;
 
 import com.hepsiburada.logs.Logs;
-import com.hepsiburada.manager.DriverFactory;
-import com.hepsiburada.stepImplementation.BaseTest;
+import com.hepsiburada.test.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.File;
