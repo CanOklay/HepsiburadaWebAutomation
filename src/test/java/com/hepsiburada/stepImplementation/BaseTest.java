@@ -1,8 +1,7 @@
 package com.hepsiburada.stepImplementation;
 
-import com.hepsiburada.base.BasePage;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,12 +9,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BaseTest extends BasePage {
+/**
+ * Created by Fatih Can Oklay
+ * Date: 30.12.2021
+ */
+
+public class BaseTest {
 
     protected static WebDriver driver;
     protected static WebDriverWait webDriverWait;
 
-    @Given("^User is navigated to the homepage$")
+    @Before
     public void user_is_on_home_page() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -27,7 +31,7 @@ public class BaseTest extends BasePage {
         driver.get("https://www.hepsiburada.com/");
     }
 
-    @Then("Driver tears down")
+    @After
     public void driver_tears_down() {
         if (driver != null) {
             driver.quit();

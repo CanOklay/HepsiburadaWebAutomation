@@ -18,11 +18,9 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <testng.version>7.5</testng.version>
     <cucumber.version>7.2.3</cucumber.version>
-    <selenium.version>4.1.2</selenium.version>
-    <bonigarcia.version>5.1.0</bonigarcia.version>
-    <cassandra.version>4.0.3</cassandra.version>
-    <mavencucumberreporting.version>5.6.2</mavencucumberreporting.version>
-    <extentreportscucumberadapter.version>1.2.1</extentreportscucumberadapter.version>
+    <selenium.version>4.1.1</selenium.version>
+    <bonigarcia.version>5.0.3</bonigarcia.version>
+    <cassandra.version>4.0.1</cassandra.version>
     <mavencleanplugin.version>3.1.0</mavencleanplugin.version>
     <mavenresourceplugin.version>3.0.2</mavenresourceplugin.version>
     <mavencompilerplugin.version>3.8.1</mavencompilerplugin.version>
@@ -104,6 +102,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${mavensurefireplugin.version}</version>
           <configuration>
+            <testFailureIgnore>true</testFailureIgnore>
             <suiteXmlFiles>
               <suiteXmlFile>testng.xml</suiteXmlFile>
             </suiteXmlFiles>
