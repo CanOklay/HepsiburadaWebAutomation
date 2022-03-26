@@ -1,6 +1,7 @@
 package com.hepsiburada.base;
 
 import com.hepsiburada.logs.Logs;
+import com.hepsiburada.manager.DriverFactory;
 import com.hepsiburada.stepImplementation.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
@@ -8,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.File;
@@ -73,6 +75,12 @@ public abstract class BasePage extends BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void hoverElement(By by) {
+        WebElement element = findElement(by);
+        Actions action = new Actions(driver);
+        action.moveToElement(element).perform();
     }
 
     public void assertEquals(String actualText, String expectedText) {
