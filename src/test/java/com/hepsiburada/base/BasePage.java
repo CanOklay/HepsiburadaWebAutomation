@@ -15,11 +15,13 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Fatih Can Oklay
- * Date: 30.12.2021
+ * Date: 26.03.2022
  */
 
 public abstract class BasePage extends BaseTest {
@@ -30,6 +32,12 @@ public abstract class BasePage extends BaseTest {
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(by));
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return driver.findElement(by);
+    }
+
+    public List<WebElement> findElements(By by) {
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(by));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        return driver.findElements(by);
     }
 
     public void sendKeys(By by, String text) {
@@ -68,6 +76,26 @@ public abstract class BasePage extends BaseTest {
         WebElement element = findElement(by);
         Actions action = new Actions(driver);
         action.moveToElement(element).perform();
+    }
+
+    public void scrollToElement(By by) {
+        WebElement element = findElement(by);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
+    }
+
+    public void jsExecuterScroll() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1000)");
+    }
+
+    public void selectRandomElement(By by){
+        List<WebElement> allElements = findElements(by);
+        Random random = new Random();
+        int randomElement = random.nextInt(allElements.size());
+        WebElement element = allElements.get(randomElement);
+        clickElement((By) element);
     }
 
     public void assertEquals(String actualText, String expectedText) {

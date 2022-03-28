@@ -17,6 +17,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+/**
+ * Created by Fatih Can Oklay
+ * Date: 26.03.2022
+ */
+
 public class DriverFactory {
 
     public static WebDriver driver;
@@ -30,6 +35,7 @@ public class DriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("start-maximized");
+                firefoxOptions.addArguments("--disable-notifications");
                 driver = new RemoteWebDriver(new URL(configFileReader.getRemoteUrl()), firefoxOptions);
                 logger.info("***** Browser is grid-firefox *****");
                 break;
@@ -38,6 +44,7 @@ public class DriverFactory {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("start-maximized");
+                chromeOptions.addArguments("--disable-notifications");
                 driver = new RemoteWebDriver(new URL(configFileReader.getRemoteUrl()), chromeOptions);
                 logger.info("***** Browser is grid-chrome *****");
                 break;
@@ -46,6 +53,7 @@ public class DriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("start-maximized");
+                firefoxOptions.addArguments("--disable-notifications");
                 driver = new FirefoxDriver(firefoxOptions);
                 logger.info("***** Browser is firefox *****");
                 break;
@@ -54,6 +62,7 @@ public class DriverFactory {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("start-maximized");
+                chromeOptions.addArguments("--disable-notifications");
                 driver = new ChromeDriver(chromeOptions);
                 logger.info("***** Browser is chrome *****");
                 break;
@@ -78,6 +87,9 @@ public class DriverFactory {
             }
             default: {
                 WebDriverManager.chromedriver().setup();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("start-maximized");
+                chromeOptions.addArguments("--disable-notifications");
                 driver= new ChromeDriver();
                 logger.info("***** Browser is chrome-bonigarcia *****");
                 break;
