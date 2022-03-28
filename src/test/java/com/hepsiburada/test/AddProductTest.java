@@ -26,7 +26,6 @@ public class AddProductTest extends Methods {
         click(LOGIN_BUTTON_EMAIL);
         fillText(PASSWORD, USER_PASSWORD);
         click(LOGIN_BUTTON_PASSWORD);
-        wait(3);
         assertEquals(driver.getTitle(), TITLE);
         fillText(SEARCH_BOX, CELL_PHONE_TEXT);
         click(SEARCH_BUTTON);
