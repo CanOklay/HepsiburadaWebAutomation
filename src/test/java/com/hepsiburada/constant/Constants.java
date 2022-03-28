@@ -11,4 +11,5 @@ public class Constants {
     public static final String USER_PASSWORD = "HepsiburadaTest345";
     public static final String CELL_PHONE_TEXT = "cep telefonu";
     public static final String TITLE = "Türkiye'nin En Büyük Online Alışveriş Sitesi Hepsiburada.com";
+    public static final String EMPTY_CART_TEXT = "Sepetin şu an boş";
 }

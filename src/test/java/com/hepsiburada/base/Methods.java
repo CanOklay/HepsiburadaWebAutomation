@@ -9,7 +9,7 @@ import static com.hepsiburada.element.SearchElements.*;
  * Date: 26.03.2022
  */
 
-public class Methods extends BasePage{
+public class Methods extends BasePage {
 
     public void hover(By by) {
         try {
@@ -26,11 +26,13 @@ public class Methods extends BasePage{
         try {
             clickElement(by);
             logger.info("Clicked element: " + by);
-        } catch (Exception e) {
+        } catch (
+                Exception e) {
             logger.error(e.getMessage());
             logger.info("Can not clicked element!");
             assertFail();
         }
+
     }
 
     public void fillText(By by, String text) {
@@ -46,7 +48,6 @@ public class Methods extends BasePage{
 
     public void fillRange(int min, int max) {
         try {
-            wait(3);
             scrollToElement(RANGE_MIN);
             sendKeys(RANGE_MIN, String.valueOf(min));
             logger.info("Minimum value is written");
@@ -62,9 +63,10 @@ public class Methods extends BasePage{
     public void selectRandomProduct(By by) {
         try {
             selectRandomElement(by);
+            logger.info("Random element is selected");
         } catch (Exception e) {
             logger.error(e.getMessage());
-            logger.info("Can not write minimum or maximum value!");
+            logger.info("Random element can not selected");
             assertFail();
         }
     }
