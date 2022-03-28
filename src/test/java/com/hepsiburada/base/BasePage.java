@@ -94,8 +94,7 @@ public abstract class BasePage extends BaseTest {
         List<WebElement> allElements = findElements(by);
         Random random = new Random();
         int randomElement = random.nextInt(allElements.size());
-        WebElement element = allElements.get(randomElement);
-        clickElement((By) element);
+        allElements.get(randomElement).click();
     }
 
     public void assertEquals(String actualText, String expectedText) {
