@@ -2,6 +2,13 @@ package com.hepsiburada.base;
 
 import org.openqa.selenium.By;
 
+import static com.hepsiburada.element.SearchElements.*;
+
+/**
+ * Created by Fatih Can Oklay
+ * Date: 26.03.2022
+ */
+
 public class Methods extends BasePage{
 
     public void hover(By by) {
@@ -33,6 +40,31 @@ public class Methods extends BasePage{
         } catch (Exception e) {
             logger.error(e.getMessage());
             logger.info("Text is not written!");
+            assertFail();
+        }
+    }
+
+    public void fillRange(int min, int max) {
+        try {
+            wait(3);
+            scrollToElement(RANGE_MIN);
+            sendKeys(RANGE_MIN, String.valueOf(min));
+            logger.info("Minimum value is written");
+            sendKeys(RANGE_MAX, String.valueOf(max));
+            logger.info("Maximum value is written");
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            logger.info("Can not write minimum or maximum value!");
+            assertFail();
+        }
+    }
+
+    public void selectRandomProduct(By by) {
+        try {
+            selectRandomElement(by);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            logger.info("Can not write minimum or maximum value!");
             assertFail();
         }
     }

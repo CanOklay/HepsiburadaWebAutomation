@@ -6,6 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * Created by Fatih Can Oklay
+ * Date: 26.03.2022
+ */
+
 public class ConfigFileReader {
 
     private final Properties properties;
