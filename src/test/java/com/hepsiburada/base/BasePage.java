@@ -85,11 +85,6 @@ public abstract class BasePage extends BaseTest {
         actions.perform();
     }
 
-    public void jsExecuterScroll() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
-    }
-
     public void selectRandomElement(By by){
         List<WebElement> allElements = findElements(by);
         Random random = new Random();
@@ -99,14 +94,6 @@ public abstract class BasePage extends BaseTest {
 
     public void assertEquals(String actualText, String expectedText) {
         Assert.assertEquals(actualText, expectedText);
-    }
-
-    public void assertTrue(boolean condition, String message) {
-        Assert.assertTrue(condition, message);
-    }
-
-    public void assertFalse(boolean condition, String message) {
-        Assert.assertFalse(condition, message);
     }
 
     public void assertFail() {
